@@ -4,9 +4,9 @@
 module hello_tb;
 
 reg A;
-wire B;
+wire B, C;
 
-hello uut(A, B);
+hello uut(.A(A), .B(B), .C(C));
 
 initial begin
     
@@ -23,7 +23,12 @@ initial begin
     #20;
 
     $display("Test complete");
+    $finish;
 
+end
+
+initial begin
+    $monitor("Time = %0t | A = %b | B = %b | C = %b", $time, A, B, C);
 end
 
 endmodule

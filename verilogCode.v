@@ -1,8 +1,10 @@
-module hello(A,B);
+module hello(A,B,C);
 
   input A;
-  output B;
+  output B, C;
 
   assign B = A;
+  assign C = ~A; 
+
 endmodule
 
